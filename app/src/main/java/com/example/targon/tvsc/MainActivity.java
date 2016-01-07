@@ -1,9 +1,8 @@
 package com.example.targon.tvsc;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.content.Intent;
-import android.widget.TextView;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
 
+        MusicPlayer mp=MusicPlayer.getPlayer(this);
 
         Thread thread=new Thread(){
             public void run(){

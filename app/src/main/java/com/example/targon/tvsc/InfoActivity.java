@@ -98,7 +98,7 @@ public class InfoActivity extends AppCompatActivity {
 
     }
 
-    public void nextRuond(){
+    public void nextRound(View view){
 
     }
 }

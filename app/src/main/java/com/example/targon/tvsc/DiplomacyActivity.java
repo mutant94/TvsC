@@ -67,7 +67,7 @@ public class DiplomacyActivity extends AppCompatActivity {
         Button buysp=(Button)findViewById(R.id.buySpec);
         TextView txtspe=(TextView)findViewById(R.id.txtspec);
         TextView txtfun=(TextView)findViewById(R.id.functionspec);
-        txtspec.setText("actual-"+agentCount);
+        txtspe.setText("actual-"+agentCount);
         if(spec>=100){
             buysp.setText(buy);
         }else {
@@ -194,18 +194,152 @@ public class DiplomacyActivity extends AppCompatActivity {
     }
 
     public void buySpec(View view) {
+        int spec=sharedPreferencesPlayer.getInt("specPoint", -1);
+
+        int agentCount=sharedPreferencesPlayer.getInt("agentCount", 0);
+        int attackspec=sharedPreferences.getInt("specAttack",-1);
+        Button bleft=(Button)findViewById(R.id.butleft);
+        Button bcent=(Button)findViewById(R.id.butcent);
+        Button bright=(Button)findViewById(R.id.butright);
+        Button buysp=(Button)findViewById(R.id.buySpec);
+        TextView txtspe=(TextView)findViewById(R.id.txtspec);
+        TextView txtfun=(TextView)findViewById(R.id.functionspec);
+        TextView txtspec=(TextView)findViewById(R.id.textspecial);
+        if(spec>=100){
+            spec=spec-100;
+            editorPlayer.putInt("specPoint", spec);
+            editorPlayer.putInt("agentCount", ++agentCount);
+            editorPlayer.putInt("specAttack", 0);
+            editorPlayer.commit();
+            txtspec.setText(spec);
+            if(agentCount==1) {
+                if (idNation > 3) {
+                    bleft.setText(at1);
+                    bright.setText(at2);
+                    bcent.setText(at3);
+                    txtfun.setText(no);
+
+                } else {
+                    bleft.setText(ac1);
+                    bright.setText(ac2);
+                    bcent.setText(ac3);
+                    txtfun.setText(no);
+
+                }
+
+
+            }
+
+
+        }
+        txtspe.setText("actual-"+agentCount);
+        if(spec<100){
+            buysp.setText(cbu);
+        }
+
+
 
     }
 
     public void spec1(View view) {
-
+        int agentCount=sharedPreferencesPlayer.getInt("agentCount", 0);
+        int attackspec=sharedPreferences.getInt("specAttack",-1);
+        Button bleft=(Button)findViewById(R.id.butleft);
+        TextView txtfun=(TextView)findViewById(R.id.functionspec);
+        if(agentCount>0){
+            if(idNation>3){
+                if(attackspec==0){
+                    bleft.setText(no);
+                    txtfun.setText(at1);
+                    editorPlayer.putInt("specAttack", 1);
+                    editorPlayer.commit();
+                }else{
+                    bleft.setText(at1);
+                    txtfun.setText(no);
+                    editorPlayer.putInt("specAttack", 0);
+                    editorPlayer.commit();
+                }
+            }else{
+                if(attackspec==0){
+                    bleft.setText(no);
+                    txtfun.setText(ac1);
+                    editorPlayer.putInt("specAttack", 4);
+                    editorPlayer.commit();
+                }else{
+                    bleft.setText(ac1);
+                    txtfun.setText(no);
+                    editorPlayer.putInt("specAttack", 0);
+                    editorPlayer.commit();
+                }
+            }
+        }
     }
 
     public void spec2(View view) {
-
+        int agentCount=sharedPreferencesPlayer.getInt("agentCount", 0);
+        int attackspec=sharedPreferences.getInt("specAttack",-1);
+        Button bcent=(Button)findViewById(R.id.butcent);
+        TextView txtfun=(TextView)findViewById(R.id.functionspec);
+        if(agentCount>0){
+            if(idNation>3){
+                if(attackspec==0){
+                    bcent.setText(no);
+                    txtfun.setText(at2);
+                    editorPlayer.putInt("specAttack", 2);
+                    editorPlayer.commit();
+                }else{
+                    bcent.setText(at2);
+                    txtfun.setText(no);
+                    editorPlayer.putInt("specAttack", 0);
+                    editorPlayer.commit();
+                }
+            }else{
+                if(attackspec==0){
+                    bcent.setText(no);
+                    txtfun.setText(ac2);
+                    editorPlayer.putInt("specAttack", 5);
+                    editorPlayer.commit();
+                }else{
+                    bcent.setText(ac2);
+                    txtfun.setText(no);
+                    editorPlayer.putInt("specAttack", 0);
+                    editorPlayer.commit();
+                }
+            }
+        }
     }
 
     public void spec3(View view) {
-
+        int agentCount=sharedPreferencesPlayer.getInt("agentCount", 0);
+        int attackspec=sharedPreferences.getInt("specAttack",-1);
+        Button bright=(Button)findViewById(R.id.butright);
+        TextView txtfun=(TextView)findViewById(R.id.functionspec);
+        if(agentCount>0){
+            if(idNation>3){
+                if(attackspec==0){
+                    bright.setText(no);
+                    txtfun.setText(at3);
+                    editorPlayer.putInt("specAttack", 3);
+                    editorPlayer.commit();
+                }else{
+                    bright.setText(at3);
+                    txtfun.setText(no);
+                    editorPlayer.putInt("specAttack", 0);
+                    editorPlayer.commit();
+                }
+            }else{
+                if(attackspec==0){
+                    bright.setText(no);
+                    txtfun.setText(ac3);
+                    editorPlayer.putInt("specAttack", 6);
+                    editorPlayer.commit();
+                }else{
+                    bright.setText(ac3);
+                    txtfun.setText(no);
+                    editorPlayer.putInt("specAttack", 0);
+                    editorPlayer.commit();
+                }
+            }
+        }
     }
 }

@@ -111,7 +111,7 @@ public class InfoActivity extends AppCompatActivity {
             editor3.putBoolean("looser", false);
             editor3.commit();
             //4i
-            editor4.putInt("money", 1000);
+            editor4.putInt("money", 100);
             editor4.putInt("specPoint", 0);
             editor4.putInt("soldierCount", 5000);
             editor4.putInt("airCount", 0);
@@ -124,7 +124,7 @@ public class InfoActivity extends AppCompatActivity {
             editor4.commit();
             //5b
             editor5.putInt("money", 1000);
-            editor5.putInt("specPoint", 100);
+            editor5.putInt("specPoint", 10);
             editor5.putInt("soldierCount", 5000);
             editor5.putInt("airCount", 0);
             editor5.putInt("navyCount", 0);
@@ -135,7 +135,7 @@ public class InfoActivity extends AppCompatActivity {
             editor5.putBoolean("looser", false);
             editor5.commit();
             //6a
-            editor6.putInt("money", 1000);
+            editor6.putInt("money", 100);
             editor6.putInt("specPoint", 0);
             editor6.putInt("soldierCount", 7500);
             editor6.putInt("airCount", 0);

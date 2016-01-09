@@ -163,7 +163,7 @@ public class BaseActivity extends AppCompatActivity {
         Button b1=(Button)findViewById(R.id.butoil);
         Button b2=(Button)findViewById(R.id.butother);
         if(idNation>3){
-            if(money>300){
+            if(money>=300){
                 money=money-300;
                 editorPlayer.putInt("money", money);
                 editorPlayer.putInt("surCount", ++countsur);
@@ -183,7 +183,7 @@ public class BaseActivity extends AppCompatActivity {
             }
 
         }else{
-            if(money>600){
+            if(money>=600){
                 money=money-600;
                 editorPlayer.putInt("money", money);
                 editorPlayer.putInt("surCount", ++countsur);
@@ -212,7 +212,7 @@ public class BaseActivity extends AppCompatActivity {
         Button b1=(Button)findViewById(R.id.butoil);
         Button b2=(Button)findViewById(R.id.butother);
         if(idNation>3){
-            if(money>200){
+            if(money>=200){
                 money=money-200;
                 editorPlayer.putInt("money", money);
                 editorPlayer.putInt("surCount", ++countoth);
@@ -231,7 +231,7 @@ public class BaseActivity extends AppCompatActivity {
                 }
             }
         }else {
-            if(money>300){
+            if(money>=300){
                 money=money-300;
                 editorPlayer.putInt("money", money);
                 editorPlayer.putInt("surCount", ++countoth);

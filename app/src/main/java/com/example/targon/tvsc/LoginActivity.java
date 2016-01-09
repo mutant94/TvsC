@@ -46,4 +46,8 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent=new Intent(this, RegistrationActivity.class);
         startActivity(intent);
     }
+
+    public void exit(View view){
+        System.exit(0);
+    }
 }

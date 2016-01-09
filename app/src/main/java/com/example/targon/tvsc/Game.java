@@ -7,28 +7,7 @@ public class Game {
     int countRound;
     int idNation;
     int lvl;
+    int attack;
+    int specAttack;
 
-    public int getCountRound() {
-        return countRound;
-    }
-
-    public void setCountRound(int countRound) {
-        this.countRound = countRound;
-    }
-
-    public int getIdNation() {
-        return idNation;
-    }
-
-    public void setIdNation(int idNation) {
-        this.idNation = idNation;
-    }
-
-    public int getLvl() {
-        return lvl;
-    }
-
-    public void setLvl(int lvl) {
-        this.lvl = lvl;
-    }
 }

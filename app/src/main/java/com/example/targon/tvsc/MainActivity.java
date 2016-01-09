@@ -1,11 +1,13 @@
 package com.example.targon.tvsc;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-
+    SharedPreferences sharedPreferencesSystem;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +32,15 @@ public class MainActivity extends AppCompatActivity {
     }
     public void goNext(){
         Intent intent;
-        intent=new Intent(this, LoginActivity.class);
+        sharedPreferencesSystem=getSharedPreferences("com.example.targon.tvsc.system.system", Context.MODE_PRIVATE);
+
+        String login=sharedPreferencesSystem.getString("login", "");
+        if(login.equals("")) {
+            intent = new Intent(this, LoginActivity.class);
+        }else {
+            intent = new Intent(this, InfoActivity.class);
+            intent.putExtra("login", login);
+        }
         startActivity(intent);
     }
     @Override

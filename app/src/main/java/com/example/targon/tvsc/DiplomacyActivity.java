@@ -25,6 +25,9 @@ public class DiplomacyActivity extends AppCompatActivity {
     String ac2="boko haram";
     String ac3="al shabad";
     String no="nothing";
+
+    String buy="cost 100 spec";
+    String cbu="can't buy";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,26 +60,71 @@ public class DiplomacyActivity extends AppCompatActivity {
         }
         //wiadomo
         int agentCount=sharedPreferencesPlayer.getInt("agentCount", 0);
+        int attackspec=sharedPreferences.getInt("specAttack",-1);
         Button bleft=(Button)findViewById(R.id.butleft);
         Button bcent=(Button)findViewById(R.id.butcent);
         Button bright=(Button)findViewById(R.id.butright);
-        if(agentCount>0){
+        Button buysp=(Button)findViewById(R.id.buySpec);
+        TextView txtspe=(TextView)findViewById(R.id.txtspec);
+        TextView txtfun=(TextView)findViewById(R.id.functionspec);
+        txtspec.setText("actual-"+agentCount);
+        if(spec>=100){
+            buysp.setText(buy);
+        }else {
+            buysp.setText(cbu);
+        }
+        if(agentCount==0){
             bleft.setBackgroundDrawable(null);
             bright.setBackgroundDrawable(null);
             bcent.setBackgroundDrawable(null);
             bleft.setText("");
             bright.setText("");
             bcent.setText("");
+            txtfun.setText("");
         }else{
             if(idNation>3){
                 bleft.setText(at1);
                 bright.setText(at2);
                 bcent.setText(at3);
-
+                switch (attackspec){
+                    case 0:
+                        txtfun.setText(no);
+                        break;
+                    case 1:
+                        txtfun.setText(at1);
+                        bleft.setText(no);
+                        break;
+                    case 2:
+                        txtfun.setText(at2);
+                        bcent.setText(no);
+                        break;
+                    case 3:
+                        txtfun.setText(at3);
+                        bright.setText(no);
+                        break;
+                }
             }else {
                 bleft.setText(ac1);
                 bright.setText(ac2);
                 bcent.setText(ac3);
+                switch (attackspec){
+                    case 0:
+                        txtfun.setText(no);
+                        break;
+                    case 4:
+                        txtfun.setText(ac1);
+                        bleft.setText(no);
+                        break;
+                    case 5:
+                        txtfun.setText(ac2);
+                        bcent.setText(no);
+                        break;
+                    case 6:
+                        txtfun.setText(ac3);
+                        bright.setText(no);
+                        break;
+                }
+
             }
         }
 

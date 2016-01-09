@@ -197,6 +197,76 @@
                     android:layout_weight="1"/>
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="15sp"
+                android:paddingLeft="15sp"
+                android:paddingTop="15sp"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="1">
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#AA0000"
+                        android:textColor="#FFFFFF"
+                        android:layout_weight="1"
+                        android:text="money"
+                        android:onClick="helpmoney"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#AA0000"
+                        android:textColor="#FFFFFF"
+                        android:layout_weight="1"
+                        android:text="spec. point"
+                        android:onClick="helpspec"/>
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="1">
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#AA0000"
+                        android:textColor="#FFFFFF"
+                        android:layout_weight="1"
+                        android:text="how win"
+                        android:onClick="helpwin"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#AA0000"
+                        android:textColor="#FFFFFF"
+                        android:layout_weight="1"
+                        android:text="Units"
+                        android:onClick="helpunit"/>
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#CCCCCC"
+                    android:textSize="15sp"
+                    android:id="@+id/txtResolve"/>
+            </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

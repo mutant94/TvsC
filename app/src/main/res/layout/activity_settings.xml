@@ -206,7 +206,11 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#AA0000"
+                android:textColor="#FFFFFF"
+                android:text="Save Game"
                 />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

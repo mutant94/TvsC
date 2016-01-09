@@ -108,6 +108,17 @@
                     android:textColor="#FFFFFF"
                     android:onClick="goReg"
                     android:text="SING IN"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"/>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#AA0000"
+                    android:textColor="#FFFFFF"
+                    android:text="EXIT"
+                    android:onClick="exit"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"

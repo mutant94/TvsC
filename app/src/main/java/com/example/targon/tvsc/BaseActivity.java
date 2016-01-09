@@ -168,7 +168,7 @@ public class BaseActivity extends AppCompatActivity {
                 editorPlayer.putInt("money", money);
                 editorPlayer.putInt("surCount", ++countsur);
                 editorPlayer.commit();
-                txtMoney.setText(money);
+                txtMoney.setText(""+money);
                 txt1.setText("Oil well-"+countsur+"(+"+countsur*30+")");
                 if(money<200){
                     b1.setText(txtnotb);
@@ -188,7 +188,7 @@ public class BaseActivity extends AppCompatActivity {
                 editorPlayer.putInt("money", money);
                 editorPlayer.putInt("surCount", ++countsur);
                 editorPlayer.commit();
-                txtMoney.setText(money);
+                txtMoney.setText("" + money);
                 txt1.setText("Oil well-"+countsur+"(+"+countsur*60+")");
                 if(money<300){
                     b1.setText(txtnotb);
@@ -217,7 +217,7 @@ public class BaseActivity extends AppCompatActivity {
                 editorPlayer.putInt("money", money);
                 editorPlayer.putInt("surCount", ++countoth);
                 editorPlayer.commit();
-                txtMoney.setText(money);
+                txtMoney.setText(""+money);
                 txt2.setText("tero gr.-"+countoth+"(+"+countoth*20+")");
                 if(money<200){
                     b1.setText(txtnotb);
@@ -236,7 +236,7 @@ public class BaseActivity extends AppCompatActivity {
                 editorPlayer.putInt("money", money);
                 editorPlayer.putInt("surCount", ++countoth);
                 editorPlayer.commit();
-                txtMoney.setText(money);
+                txtMoney.setText(""+money);
                 txt2.setText("factory-"+countoth+"(+"+countoth*30+")");
                 if(money<300){
                     b1.setText(txtnotb);

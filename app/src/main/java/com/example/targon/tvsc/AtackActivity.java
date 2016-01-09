@@ -163,19 +163,31 @@ public class AtackActivity extends AppCompatActivity {
         sharedPreferences=getSharedPreferences("com.example.targon.tvsc." + login, Context.MODE_PRIVATE);
         editor=sharedPreferences.edit();
         Button bleft=(Button)findViewById(R.id.butleft);
+        Button bcent=(Button)findViewById(R.id.butcent);
+        Button bright=(Button)findViewById(R.id.butright);
         TextView textf=(TextView)findViewById(R.id.function);
+
+
         if(idNation<4){
+            bleft.setText(functiona4);
+            bcent.setText(functiona5);
+            bright.setText(functiona6);
             int fun=sharedPreferences.getInt("attack", -1);
             if(fun==0){
                 editor.putInt("attack", 4);
                 editor.commit();
                 bleft.setText("change to "+function);
                 textf.setText(funac+functiona4);
-            }else{
+            }else if(fun==4){
                 editor.putInt("attack", 0);
                 editor.commit();
-                bleft.setText("change to "+functiona4);
+                bleft.setText(functiona4);
                 textf.setText(funac+function);
+            }else{
+                editor.putInt("attack", 4);
+                editor.commit();
+                bleft.setText("change to "+function);
+                textf.setText(functiona4);
             }
         }
     }
@@ -184,19 +196,31 @@ public class AtackActivity extends AppCompatActivity {
         sharedPreferences=getSharedPreferences("com.example.targon.tvsc." + login, Context.MODE_PRIVATE);
         editor=sharedPreferences.edit();
         int fun=sharedPreferences.getInt("attack", -1);
+        Button bleft=(Button)findViewById(R.id.butleft);
         Button bcent=(Button)findViewById(R.id.butcent);
+        Button bright=(Button)findViewById(R.id.butright);
         TextView textf=(TextView)findViewById(R.id.function);
+
+
         if(idNation<4){
+            bleft.setText(functiona4);
+            bcent.setText(functiona5);
+            bright.setText(functiona6);
             if(fun==0){
                 editor.putInt("attack", 5);
                 editor.commit();
                 bcent.setText("change to "+function);
                 textf.setText(funac+functiona5);
-            }else{
+            }else if(fun==5){
                 editor.putInt("attack", 0);
                 editor.commit();
-                bcent.setText("change to "+functiona4);
+                bcent.setText(functiona5);
                 textf.setText(funac+function);
+            }else{
+                editor.putInt("attack", 5);
+                editor.commit();
+                bcent.setText(funac+function);
+                textf.setText(functiona5);
             }
         }else {
             if(fun==0){
@@ -216,20 +240,32 @@ public class AtackActivity extends AppCompatActivity {
     public void atack3(View view) {
         sharedPreferences=getSharedPreferences("com.example.targon.tvsc." + login, Context.MODE_PRIVATE);
         editor=sharedPreferences.edit();
+        Button bleft=(Button)findViewById(R.id.butleft);
+        Button bcent=(Button)findViewById(R.id.butcent);
         Button bright=(Button)findViewById(R.id.butright);
         TextView textf=(TextView)findViewById(R.id.function);
+
+
         if(idNation<4){
             int fun=sharedPreferences.getInt("attack", -1);
+            bleft.setText(functiona4);
+            bcent.setText(functiona5);
+            bright.setText(functiona6);
             if(fun==0){
-                editor.putInt("attack", 5);
+                editor.putInt("attack", 6);
                 editor.commit();
                 bright.setText("change to "+function);
-                textf.setText(funac+functiona4);
-            }else{
+                textf.setText(funac+functiona6);
+            }else if(fun==6){
                 editor.putInt("attack", 0);
                 editor.commit();
-                bright.setText("change to "+functiona5);
+                bright.setText(functiona6);
                 textf.setText(funac+function);
+            }else{
+                editor.putInt("attack", 6);
+                editor.commit();
+                bright.setText(funac+function);
+                textf.setText(functiona6);
             }
         }
     }

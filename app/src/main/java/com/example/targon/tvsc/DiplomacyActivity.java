@@ -3,6 +3,7 @@ package com.example.targon.tvsc;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -82,10 +83,13 @@ public class DiplomacyActivity extends AppCompatActivity {
             bcent.setText("");
             txtfun.setText("");
         }else{
+            bleft.setBackgroundColor(Color.parseColor("#AA0000"));
+            bright.setBackgroundColor(Color.parseColor("#AA0000"));
+            bcent.setBackgroundColor(Color.parseColor("#AA0000"));
             if(idNation>3){
                 bleft.setText(at1);
-                bright.setText(at2);
-                bcent.setText(at3);
+                bcent.setText(at2);
+                bright.setText(at3);
                 switch (attackspec){
                     case 0:
                         txtfun.setText(no);
@@ -105,8 +109,8 @@ public class DiplomacyActivity extends AppCompatActivity {
                 }
             }else {
                 bleft.setText(ac1);
-                bright.setText(ac2);
-                bcent.setText(ac3);
+                bcent.setText(ac2);
+                bright.setText(ac3);
                 switch (attackspec){
                     case 0:
                         txtfun.setText(no);
@@ -202,6 +206,9 @@ public class DiplomacyActivity extends AppCompatActivity {
         Button bcent=(Button)findViewById(R.id.butcent);
         Button bright=(Button)findViewById(R.id.butright);
         Button buysp=(Button)findViewById(R.id.buySpec);
+        bleft.setBackgroundColor(Color.parseColor("#AA0000"));
+        bright.setBackgroundColor(Color.parseColor("#AA0000"));
+        bcent.setBackgroundColor(Color.parseColor("#AA0000"));
         TextView txtspe=(TextView)findViewById(R.id.txtspec);
         TextView txtfun=(TextView)findViewById(R.id.functionspec);
         TextView txtspec=(TextView)findViewById(R.id.textspecial);
@@ -209,20 +216,21 @@ public class DiplomacyActivity extends AppCompatActivity {
             spec=spec-100;
             editorPlayer.putInt("specPoint", spec);
             editorPlayer.putInt("agentCount", ++agentCount);
-            editorPlayer.putInt("specAttack", 0);
+            editor.putInt("specAttack", 0);
             editorPlayer.commit();
-            txtspec.setText(spec);
+            editor.commit();
+            txtspec.setText(""+spec);
             if(agentCount==1) {
                 if (idNation > 3) {
                     bleft.setText(at1);
-                    bright.setText(at2);
-                    bcent.setText(at3);
+                    bright.setText(at3);
+                    bcent.setText(at2);
                     txtfun.setText(no);
 
                 } else {
                     bleft.setText(ac1);
-                    bright.setText(ac2);
-                    bcent.setText(ac3);
+                    bright.setText(ac3);
+                    bcent.setText(ac2);
                     txtfun.setText(no);
 
                 }
@@ -236,6 +244,14 @@ public class DiplomacyActivity extends AppCompatActivity {
         if(spec<100){
             buysp.setText(cbu);
         }
+        if(agentCount==0){
+            bleft.setBackgroundDrawable(null);
+            bright.setBackgroundDrawable(null);
+            bcent.setBackgroundDrawable(null);
+            bleft.setText("");
+            bright.setText("");
+            bcent.setText("");
+        }
 
 
 
@@ -245,31 +261,50 @@ public class DiplomacyActivity extends AppCompatActivity {
         int agentCount=sharedPreferencesPlayer.getInt("agentCount", 0);
         int attackspec=sharedPreferences.getInt("specAttack",-1);
         Button bleft=(Button)findViewById(R.id.butleft);
+        Button bcent=(Button)findViewById(R.id.butcent);
+        Button bright=(Button)findViewById(R.id.butright);
+
         TextView txtfun=(TextView)findViewById(R.id.functionspec);
         if(agentCount>0){
             if(idNation>3){
+                bleft.setText(at1);
+                bcent.setText(at2);
+                bright.setText(at3);
                 if(attackspec==0){
                     bleft.setText(no);
                     txtfun.setText(at1);
-                    editorPlayer.putInt("specAttack", 1);
-                    editorPlayer.commit();
-                }else{
+                    editor.putInt("specAttack", 1);
+                    editor.commit();
+                }else if(attackspec==1){
                     bleft.setText(at1);
                     txtfun.setText(no);
-                    editorPlayer.putInt("specAttack", 0);
-                    editorPlayer.commit();
+                    editor.putInt("specAttack", 0);
+                    editor.commit();
+                }else{
+                    bleft.setText(no);
+                    txtfun.setText(at1);
+                    editor.putInt("specAttack", 1);
+                    editor.commit();
                 }
             }else{
+                bleft.setText(ac1);
+                bcent.setText(ac2);
+                bright.setText(ac3);
                 if(attackspec==0){
                     bleft.setText(no);
                     txtfun.setText(ac1);
-                    editorPlayer.putInt("specAttack", 4);
-                    editorPlayer.commit();
-                }else{
+                    editor.putInt("specAttack", 4);
+                    editor.commit();
+                }else if(attackspec==4){
                     bleft.setText(ac1);
                     txtfun.setText(no);
-                    editorPlayer.putInt("specAttack", 0);
-                    editorPlayer.commit();
+                    editor.putInt("specAttack", 0);
+                    editor.commit();
+                }else{
+                    bleft.setText(no);
+                    txtfun.setText(ac1);
+                    editor.putInt("specAttack", 4);
+                    editor.commit();
                 }
             }
         }
@@ -278,32 +313,51 @@ public class DiplomacyActivity extends AppCompatActivity {
     public void spec2(View view) {
         int agentCount=sharedPreferencesPlayer.getInt("agentCount", 0);
         int attackspec=sharedPreferences.getInt("specAttack",-1);
+        Button bleft=(Button)findViewById(R.id.butleft);
         Button bcent=(Button)findViewById(R.id.butcent);
+        Button bright=(Button)findViewById(R.id.butright);
         TextView txtfun=(TextView)findViewById(R.id.functionspec);
         if(agentCount>0){
             if(idNation>3){
+                bleft.setText(at1);
+                bcent.setText(at2);
+                bright.setText(at3);
                 if(attackspec==0){
                     bcent.setText(no);
                     txtfun.setText(at2);
-                    editorPlayer.putInt("specAttack", 2);
-                    editorPlayer.commit();
-                }else{
+                    editor.putInt("specAttack", 2);
+                    editor.commit();
+                }else if(attackspec==2){
                     bcent.setText(at2);
                     txtfun.setText(no);
-                    editorPlayer.putInt("specAttack", 0);
-                    editorPlayer.commit();
+                    editor.putInt("specAttack", 0);
+                    editor.commit();
+                }else{
+                    bcent.setText(no);
+                    txtfun.setText(at2);
+                    editor.putInt("specAttack", 2);
+                    editor.commit();
                 }
             }else{
+                bleft.setText(ac1);
+                bcent.setText(ac2);
+                bright.setText(ac3);
+                txtfun.setText(no);
                 if(attackspec==0){
                     bcent.setText(no);
                     txtfun.setText(ac2);
-                    editorPlayer.putInt("specAttack", 5);
-                    editorPlayer.commit();
-                }else{
+                    editor.putInt("specAttack", 5);
+                    editor.commit();
+                }else if(attackspec==5){
                     bcent.setText(ac2);
                     txtfun.setText(no);
-                    editorPlayer.putInt("specAttack", 0);
-                    editorPlayer.commit();
+                    editor.putInt("specAttack", 0);
+                    editor.commit();
+                }else{
+                    bcent.setText(no);
+                    txtfun.setText(ac2);
+                    editor.putInt("specAttack", 5);
+                    editor.commit();
                 }
             }
         }
@@ -312,32 +366,50 @@ public class DiplomacyActivity extends AppCompatActivity {
     public void spec3(View view) {
         int agentCount=sharedPreferencesPlayer.getInt("agentCount", 0);
         int attackspec=sharedPreferences.getInt("specAttack",-1);
+        Button bleft=(Button)findViewById(R.id.butleft);
+        Button bcent=(Button)findViewById(R.id.butcent);
         Button bright=(Button)findViewById(R.id.butright);
         TextView txtfun=(TextView)findViewById(R.id.functionspec);
         if(agentCount>0){
             if(idNation>3){
+                bleft.setText(at1);
+                bcent.setText(at2);
+                bright.setText(at3);
                 if(attackspec==0){
                     bright.setText(no);
                     txtfun.setText(at3);
-                    editorPlayer.putInt("specAttack", 3);
-                    editorPlayer.commit();
-                }else{
+                    editor.putInt("specAttack", 3);
+                    editor.commit();
+                }else if(attackspec==3){
                     bright.setText(at3);
                     txtfun.setText(no);
-                    editorPlayer.putInt("specAttack", 0);
-                    editorPlayer.commit();
+                    editor.putInt("specAttack", 0);
+                    editor.commit();
+                }else{
+                    bright.setText(no);
+                    txtfun.setText(at3);
+                    editor.putInt("specAttack", 3);
+                    editor.commit();
                 }
             }else{
+                bleft.setText(ac1);
+                bcent.setText(ac2);
+                bright.setText(ac3);
                 if(attackspec==0){
                     bright.setText(no);
                     txtfun.setText(ac3);
-                    editorPlayer.putInt("specAttack", 6);
-                    editorPlayer.commit();
-                }else{
+                    editor.putInt("specAttack", 6);
+                    editor.commit();
+                }else if(attackspec==6){
                     bright.setText(ac3);
                     txtfun.setText(no);
-                    editorPlayer.putInt("specAttack", 0);
-                    editorPlayer.commit();
+                    editor.putInt("specAttack", 0);
+                    editor.commit();
+                }else{
+                    bright.setText(no);
+                    txtfun.setText(ac3);
+                    editor.putInt("specAttack", 6);
+                    editor.commit();
                 }
             }
         }

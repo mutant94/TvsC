@@ -15,7 +15,11 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
         MusicPlayer mp=MusicPlayer.getPlayer(this);
-
+        SharedPreferences sharedPreferencesSystem = getSharedPreferences("com.example.targon.tvsc.system.system", Context.MODE_PRIVATE);;
+        boolean music=sharedPreferencesSystem.getBoolean("music", true);
+        if(music==false){
+            mp.paused(this);
+        }
         Thread thread=new Thread(){
             public void run(){
                 try {

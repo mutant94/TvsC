@@ -223,42 +223,42 @@
                 android:layout_height="wrap_content"
                 android:textColor="#CCCCCC"
                 android:textSize="15sp"
-                android:text="test"
+                android:text=""
                 android:id="@+id/infsol"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#CCCCCC"
                 android:textSize="15sp"
-                android:text="test"
+                android:text=""
                 android:id="@+id/infair"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#CCCCCC"
                 android:textSize="15sp"
-                android:text="test"
+                android:text=""
                 android:id="@+id/infnavy"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#CCCCCC"
                 android:textSize="15sp"
-                android:text="test"
+                android:text=""
                 android:id="@+id/infdron"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#CCCCCC"
                 android:textSize="15sp"
-                android:text="test"
+                android:text=""
                 android:id="@+id/infspecial"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#CCCCCC"
                 android:textSize="15sp"
-                android:text="test\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest\ntest1"
+                android:text=""
                 android:id="@+id/infenemy"/>
 
             <TextView

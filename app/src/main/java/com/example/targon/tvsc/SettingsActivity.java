@@ -14,7 +14,7 @@ public class SettingsActivity extends AppCompatActivity {
     SharedPreferences.Editor editor;
     SharedPreferences sharedPreferencesSystem;
     SharedPreferences.Editor editorSystem;
-
+    MusicPlayer mp=MusicPlayer.getPlayer(this);
     SharedPreferences sharedPreferencesPlayer;
     SharedPreferences.Editor editorPlayer;
     int idNation;
@@ -49,13 +49,39 @@ public class SettingsActivity extends AppCompatActivity {
         if(idNation>3){
             viewh.setText("territory");
         }
+        sharedPreferencesSystem = getSharedPreferences("com.example.targon.tvsc.system.system", Context.MODE_PRIVATE);
+        editorSystem = sharedPreferencesSystem.edit();
+        ImageView img = (ImageView) findViewById(R.id.imgPlayMusic);
+        TextView txt = (TextView) findViewById(R.id.textPlayMusic);
+        boolean play = sharedPreferencesSystem.getBoolean("music", true);
+        if (play==true) {
+            img.setImageResource(R.drawable.mon);
+            txt.setText("music on");
+        } else {
+            img.setImageResource(R.drawable.moff);
+            txt.setText("music off");
+        }
     }
 
     public void musicPlay(View view) {
         //zmiana icony
-        sharedPreferences=getSharedPreferences("com.example.targon.tvsc.system.system", Context.MODE_PRIVATE);
-        editor=sharedPreferences.edit();
-        ImageView img=(ImageView)findViewById(R.id.imgPlayMusic);
+        sharedPreferencesSystem = getSharedPreferences("com.example.targon.tvsc.system.system", Context.MODE_PRIVATE);
+        editorSystem = sharedPreferencesSystem.edit();
+        ImageView img = (ImageView) findViewById(R.id.imgPlayMusic);
+        TextView txt = (TextView) findViewById(R.id.textPlayMusic);
+        boolean play = sharedPreferencesSystem.getBoolean("music", true);
+        mp.paused(this);
+        if (play==true) {
+            img.setImageResource(R.drawable.moff);
+            txt.setText("music off");
+            editorSystem.putBoolean("music", false);
+            editorSystem.commit();
+        } else {
+            editorSystem.putBoolean("music", true);
+            editorSystem.commit();
+            img.setImageResource(R.drawable.mon);
+            txt.setText("music on");
+        }
         //img.setImageResource(R.drawable.moff);
         //img.setImageResource(R.drawable.mon);
     }

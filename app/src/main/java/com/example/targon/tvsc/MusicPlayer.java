@@ -11,7 +11,6 @@ import java.io.IOException;
 public class MusicPlayer {
     static private MusicPlayer player;
     private static MediaPlayer mediaPlayer;
-    private boolean onPause;
     AppCompatActivity parent;
     public static MusicPlayer getPlayer(AppCompatActivity activity) {
         if(player==null){
@@ -35,4 +34,14 @@ public class MusicPlayer {
             }
         });
     }
+    public void paused(AppCompatActivity activity){
+        boolean play=mediaPlayer.isPlaying();
+        if(play==true){
+            mediaPlayer.pause();
+        }else{
+            mediaPlayer.start();
+        }
+
+    }
+
 }

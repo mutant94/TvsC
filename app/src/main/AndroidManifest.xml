@@ -8,52 +8,68 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name=".MainActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize">
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize">
+        <activity
+            android:name=".LoginActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" >
         </activity>
-        <activity android:name=".RegistrationActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize">
+        <activity
+            android:name=".RegistrationActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" >
         </activity>
-        <activity android:name=".Registration2Activity"
-            android:configChanges="keyboardHidden|orientation|screenSize">
+        <activity
+            android:name=".Registration2Activity"
+            android:configChanges="keyboardHidden|orientation|screenSize" >
         </activity>
-        <activity android:name=".InfoActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize">
+        <activity
+            android:name=".InfoActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" >
         </activity>
-        <activity android:name=".SoldiersActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize">
+        <activity
+            android:name=".SoldiersActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" >
         </activity>
-        <activity android:name=".AtackActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize">
+        <activity
+            android:name=".AtackActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" >
         </activity>
-        <activity android:name=".BaseActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize">
+        <activity
+            android:name=".BaseActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" >
         </activity>
-        <activity android:name=".DiplomacyActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize">
+        <activity
+            android:name=".DiplomacyActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" >
         </activity>
-        <activity android:name=".HelpActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize">
+        <activity
+            android:name=".HelpActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" >
         </activity>
-        <activity android:name=".StatisticActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize">
+        <activity
+            android:name=".StatisticActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" >
         </activity>
-        <activity android:name=".SettingsActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize">
+        <activity
+            android:name=".SettingsActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" >
         </activity>
-        <activity android:name=".Registration3Activity"
-            android:configChanges="keyboardHidden|orientation|screenSize">
+        <activity
+            android:name=".Registration3Activity"
+            android:configChanges="keyboardHidden|orientation|screenSize" >
         </activity>
-        <activity android:name=".Registration4Activity"
-            android:configChanges="keyboardHidden|orientation|screenSize">
+        <activity
+            android:name=".Registration4Activity"
+            android:configChanges="keyboardHidden|orientation|screenSize" >
+        </activity>
+        <activity android:name=".EndActivity" >
         </activity>
     </application>
 

@@ -128,7 +128,7 @@ public class InfoActivity extends AppCompatActivity {
             editor4.putBoolean("looser", false);
             editor4.commit();
             //5b
-            editor5.putInt("money", 1000);
+            editor5.putInt("money", 100);
             editor5.putInt("specPoint", 10);
             editor5.putInt("soldierCount", 5000);
             editor5.putInt("airCount", 0);
@@ -218,7 +218,7 @@ public class InfoActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        //finish();
+        finish();
     }
 
     public void goMenu(View view) {
@@ -301,8 +301,18 @@ public class InfoActivity extends AppCompatActivity {
          int attack;
          int specAttack;
          */
+        TextView txt=(TextView)findViewById(R.id.infsol);
+        TextView txta=(TextView)findViewById(R.id.infair);
+        TextView txtn=(TextView)findViewById(R.id.infnavy);
+        TextView txts=(TextView)findViewById(R.id.infspec);
+        String infospec="";
+        txt.setText("working");
         boolean playerlooser=false;
         Double doub;
+        sharedPreferencesGame=getSharedPreferences("com.example.targon.tvsc." + login + "." + idNation, Context.MODE_PRIVATE);
+        int infosol=sharedPreferencesGame.getInt("soldierCount", 0);
+        int infoair=sharedPreferencesGame.getInt("airCount", 0);
+        int infonavy=sharedPreferencesGame.getInt("navyCount", 0);
         int a;
         int i=1;
         int money=0;
@@ -315,6 +325,8 @@ public class InfoActivity extends AppCompatActivity {
         int othercount=0;
         int agentcount=0;
         boolean looser=true;
+        //
+
         //zakupy
         switch(lvl){
             case 1:
@@ -547,7 +559,6 @@ public class InfoActivity extends AppCompatActivity {
         }
         //reszta
         Double d;
-        int infoSol=-1;
 
         int solcount1=sharedPreferences1.getInt("soldierCount", 0);
 
@@ -564,21 +575,9 @@ public class InfoActivity extends AppCompatActivity {
         int aircount1;
         int aircount2;
         int aircount3;
-        int aircount4;
-        int aircount5;
-        int aircount6;
         int navycount1;
         int navycount2;
         int navycount3;
-        int navycount4;
-        int navycount5;
-        int navycount6;
-        int droncount1;
-        int droncount2;
-        int droncount3;
-        int droncount4;
-        int droncount5;
-        int droncount6;
 
         boolean l1=sharedPreferences1.getBoolean("looser", true);
         boolean l2=sharedPreferences2.getBoolean("looser", true);
@@ -587,67 +586,60 @@ public class InfoActivity extends AppCompatActivity {
         boolean l5=sharedPreferences5.getBoolean("looser", true);
         boolean l6=sharedPreferences6.getBoolean("looser", true);
         //co turówka
+
+
+
         if(l1==false){
             d=0.01*solcount1;
-            solcount1-=d*6;
+            d=100-d;
+            solcount1-=d*2;
             editor1.putInt("soldierCount", solcount1);
             editor1.commit();
-            if(idNation==1){
-                d*=6;
-                infoSol=d.intValue();
-            }
+
         }
         if(l2==false){
             d=0.01*solcount2;
-            solcount2-=d*6;
+            d=100-d;
+            solcount2-=d*2;
             editor2.putInt("soldierCount", solcount2);
             editor2.commit();
-            if(idNation==1){
-                d*=6;
-                infoSol=d.intValue();
-            }
+
         }
         if(l3==false){
             d=0.01*solcount3;
-            solcount3-=d*6;
+            d=100-d;
+            solcount3-=d*2;
             editor3.putInt("soldierCount", solcount3);
             editor3.commit();
-            if(idNation==1){
-                d*=6;
-                infoSol=d.intValue();
-            }
+
         }
         if(l4==false){
             d=0.01*solcount4;
-            solcount4-=d*30;
+            d=100-d;
+            solcount4-=d*10;
             editor4.putInt("soldierCount", solcount4);
             editor4.commit();
-            if(idNation==1){
-                d*=6;
-                infoSol=d.intValue();
-            }
+
         }
         if(l5==false){
             d=0.01*solcount5;
-            solcount5-=d*30;
+            d=100-d;
+            solcount5-=d*10;
             editor5.putInt("soldierCount", solcount5);
             editor5.commit();
-            if(idNation==1){
-                d*=6;
-                infoSol=d.intValue();
-            }
+
         }
         if(l6==false){
             d=0.01*solcount6;
-            solcount6-=d*30;
+            d=100-d;
+            solcount6-=d*10;
             editor6.putInt("soldierCount", solcount6);
             editor6.commit();
-            if(idNation==1){
-                d*=6;
-                infoSol=d.intValue();
-            }
+
         }
         //fight
+
+        txt.setText("fight");
         i=1;
         Random rand=new Random();
         int r;
@@ -666,35 +658,20 @@ public class InfoActivity extends AppCompatActivity {
             navycount=sharedPreferencesGame.getInt("navyCount", 0);
             droncount=sharedPreferencesGame.getInt("navyCount", 0);
 
-            solcount1=sharedPreferences1.getInt("soldierCount", 0);
             aircount1=sharedPreferences1.getInt("airCount", 0);
             navycount1=sharedPreferences1.getInt("navyCount", 0);
-            droncount1=sharedPreferences1.getInt("dronCount", 0);
 
-            solcount2=sharedPreferences2.getInt("soldierCount", 0);
             aircount2=sharedPreferences2.getInt("airCount", 0);
             navycount2=sharedPreferences2.getInt("navyCount", 0);
-            droncount2=sharedPreferences2.getInt("dronCount", 0);
 
-            solcount3=sharedPreferences3.getInt("soldierCount", 0);
             aircount3=sharedPreferences3.getInt("airCount", 0);
             navycount3=sharedPreferences3.getInt("navyCount", 0);
-            droncount3=sharedPreferences3.getInt("dronCount", 0);
 
             solcount4=sharedPreferences4.getInt("soldierCount", 0);
-            aircount4=sharedPreferences4.getInt("airCount", 0);
-            navycount4=sharedPreferences4.getInt("navyCount", 0);
-            droncount4=sharedPreferences4.getInt("dronCount", 0);
 
             solcount5=sharedPreferences5.getInt("soldierCount", 0);
-            aircount5=sharedPreferences5.getInt("airCount", 0);
-            navycount5=sharedPreferences5.getInt("navyCount", 0);
-            droncount5=sharedPreferences5.getInt("dronCount", 0);
 
             solcount6=sharedPreferences6.getInt("soldierCount", 0);
-            aircount6=sharedPreferences6.getInt("airCount", 0);
-            navycount6=sharedPreferences6.getInt("navyCount", 0);
-            droncount6=sharedPreferences6.getInt("dronCount", 0);
 
 
             if(looser==false){
@@ -710,41 +687,44 @@ public class InfoActivity extends AppCompatActivity {
                             case 4:
                                 for(int k=0; k<aircount; k++){
                                     r=rand.nextInt(11);
-                                    r*=droncount;
+                                    r*=droncount+1;
                                     solcount4-=r;
                                 }
                                 for(int k=0; k<navycount; k++){
                                     r=rand.nextInt(16);
-                                    r*=droncount;
+                                    r*=droncount+1;
                                     solcount4-=r;
                                 }
                                 editor4.putInt("soldierCount", solcount);
+                                editor4.commit();
                                 break;
                             case 5:
                                 for(int k=0; k<aircount; k++){
                                     r=rand.nextInt(11);
-                                    r*=droncount;
+                                    r*=droncount+1;
                                     solcount5-=r;
                                 }
                                 for(int k=0; k<navycount; k++){
                                     r=rand.nextInt(16);
-                                    r*=droncount;
+                                    r*=droncount+1;
                                     solcount5-=r;
                                 }
                                 editor5.putInt("soldierCount", solcount);
+                                editor5.commit();
                                 break;
                             case 6:
                                 for(int k=0; k<aircount; k++){
                                     r=rand.nextInt(11);
-                                    r*=droncount;
+                                    r*=droncount+1;
                                     solcount6-=r;
                                 }
                                 for(int k=0; k<navycount; k++){
                                     r=rand.nextInt(16);
-                                    r*=droncount;
+                                    r*=droncount+1;
                                     solcount6-=r;
                                 }
                                 editor6.putInt("soldierCount", solcount);
+                                editor6.commit();
                                 break;
 
                         }
@@ -764,15 +744,16 @@ public class InfoActivity extends AppCompatActivity {
                             }
                             for(int k=0; k<aircount; k++){
                                 r=rand.nextInt(11);
-                                r*=droncount;
+                                r*=droncount+1;
                                 solcount4-=r;
                             }
                             for(int k=0; k<navycount; k++){
                                 r=rand.nextInt(16);
-                                r*=droncount;
+                                r*=droncount+1;
                                 solcount4-=r;
                             }
                             editor4.putInt("soldierCount", solcount);
+                            editor4.commit();
                         }else if(ha5>ha6){
                             switch (i){
                                 case 1:
@@ -787,15 +768,16 @@ public class InfoActivity extends AppCompatActivity {
                             }
                             for(int k=0; k<aircount; k++){
                                 r=rand.nextInt(11);
-                                r*=droncount;
+                                r*=droncount+1;
                                 solcount5-=r;
                             }
                             for(int k=0; k<navycount; k++){
                                 r=rand.nextInt(16);
-                                r*=droncount;
+                                r*=droncount+1;
                                 solcount5-=r;
                             }
                             editor5.putInt("soldierCount", solcount);
+                            editor5.commit();
                         }else{
                             switch (i){
                                 case 1:
@@ -810,29 +792,460 @@ public class InfoActivity extends AppCompatActivity {
                             }
                             for(int k=0; k<aircount; k++){
                                 r=rand.nextInt(11);
-                                r*=droncount;
+                                r*=droncount+1;
                                 solcount6-=r;
                             }
                             for(int k=0; k<navycount; k++){
                                 r=rand.nextInt(16);
-                                r*=droncount;
+                                r*=droncount+1;
                                 solcount6-=r;
                             }
                             editor6.putInt("soldierCount", solcount);
+                            editor6.commit();
 
                         }
                     }
                 }else{
                     //tero
                     if(idNation==i){
-                        
+                        int attack=sharedPreferences.getInt("attack", 0);
+                        switch (attack){
+                            case 0:
+
+                                break;
+                            case 1:
+                                if(a1==i){
+                                    if(droncount==0){
+                                        while (aircount1>0&&aircount>0){
+                                            r=rand.nextInt(2);
+                                            if(r==1){
+                                                --aircount1;
+                                            }
+                                            aircount--;
+                                        }
+                                        while (navycount1>0&&navycount>0){
+                                            r=rand.nextInt(2);
+                                            if(r==1){
+                                                --navycount1;
+                                            }
+                                            navycount--;
+                                        }
+                                    }else{
+                                        while (aircount1>0&&aircount>0){
+                                            --aircount1;
+                                            aircount--;
+                                        }
+                                        while (navycount1>0&&navycount>0){
+                                            --navycount1;
+                                            navycount--;
+                                        }
+                                    }
+                                    editor1.putInt("airCount", aircount1);
+                                    editor1.putInt("nacyCount", navycount1);
+                                    editor1.commit();
+                                }
+
+
+                                if(a2==i){
+                                    if(droncount==0){
+                                        while (aircount2>0&&aircount>0){
+                                            r=rand.nextInt(2);
+                                            if(r==1){
+                                                --aircount2;
+                                            }
+                                            aircount--;
+                                        }
+                                        while (navycount2>0&&navycount>0){
+                                            r=rand.nextInt(2);
+                                            if(r==1){
+                                                --navycount2;
+                                            }
+                                            navycount--;
+                                        }
+                                    }else{
+                                        while (aircount2>0&&aircount>0){
+                                            --aircount2;
+                                            aircount--;
+                                        }
+                                        while (navycount2>0&&navycount>0){
+                                            --navycount2;
+                                            navycount--;
+                                        }
+                                    }
+                                    editor2.putInt("airCount", aircount1);
+                                    editor2.putInt("nacyCount", navycount1);
+                                    editor2.commit();
+                                }
+
+
+                                if(a3==i){
+                                    if(droncount==0){
+                                        while (aircount3>0&&aircount>0){
+                                            r=rand.nextInt(2);
+                                            if(r==1){
+                                                --aircount3;
+                                            }
+                                            aircount--;
+                                        }
+                                        while (navycount3>0&&navycount>0){
+                                            r=rand.nextInt(2);
+                                            if(r==1){
+                                                --navycount3;
+                                            }
+                                            navycount--;
+                                        }
+                                    }else{
+                                        while (aircount3>0&&aircount>0){
+                                            --aircount3;
+                                            aircount--;
+                                        }
+                                        while (navycount3>0&&navycount>0){
+                                            --navycount3;
+                                            navycount--;
+                                        }
+                                    }
+                                    editor3.putInt("airCount", aircount1);
+                                    editor3.putInt("nacyCount", navycount1);
+                                    editor3.commit();
+                                }
+                                editorGame.putInt("airCount", 0);
+                                editorGame.putInt("navyCount", 0);
+                                editorGame.commit();
+                                break;
+                        }
                     }else{
+
+
+                        if(a1==i){
+                            if(droncount==0){
+                                while (aircount1>0&&aircount>0){
+                                    r=rand.nextInt(2);
+                                    if(r==1){
+                                        --aircount1;
+                                    }
+                                    aircount--;
+                                }
+                                while (navycount1>0&&navycount>0){
+                                    r=rand.nextInt(2);
+                                    if(r==1){
+                                        --navycount1;
+                                    }
+                                    navycount--;
+                                }
+                            }else{
+                                while (aircount1>0&&aircount>0){
+                                    --aircount1;
+                                    aircount--;
+                                }
+                                while (navycount1>0&&navycount>0){
+                                    --navycount1;
+                                    navycount--;
+                                }
+                            }
+                            editor1.putInt("airCount", aircount1);
+                            editor1.putInt("nacyCount", navycount1);
+                            editor1.commit();
+                        }
+
+
+                        if(a2==i){
+                            if(droncount==0){
+                                while (aircount2>0&&aircount>0){
+                                    r=rand.nextInt(2);
+                                    if(r==1){
+                                        --aircount2;
+                                    }
+                                    aircount--;
+                                }
+                                while (navycount2>0&&navycount>0){
+                                    r=rand.nextInt(2);
+                                    if(r==1){
+                                        --navycount2;
+                                    }
+                                    navycount--;
+                                }
+                            }else{
+                                while (aircount2>0&&aircount>0){
+                                    --aircount2;
+                                    aircount--;
+                                }
+                                while (navycount2>0&&navycount>0){
+                                    --navycount2;
+                                    navycount--;
+                                }
+                            }
+                            editor2.putInt("airCount", aircount1);
+                            editor2.putInt("nacyCount", navycount1);
+                            editor2.commit();
+                        }
+
+
+                        if(a3==i){
+                            if(droncount==0){
+                                while (aircount3>0&&aircount>0){
+                                    r=rand.nextInt(2);
+                                    if(r==1){
+                                        --aircount3;
+                                    }
+                                    aircount--;
+                                }
+                                while (navycount3>0&&navycount>0){
+                                    r=rand.nextInt(2);
+                                    if(r==1){
+                                        --navycount3;
+                                    }
+                                    navycount--;
+                                }
+                            }else{
+                                while (aircount3>0&&aircount>0){
+                                    --aircount3;
+                                    aircount--;
+                                }
+                                while (navycount3>0&&navycount>0){
+                                    --navycount3;
+                                    navycount--;
+                                }
+                            }
+                            editor3.putInt("airCount", aircount1);
+                            editor3.putInt("nacyCount", navycount1);
+                            editor3.commit();
+                        }
+                        editorGame.putInt("airCount", 0);
+                        editorGame.putInt("navyCount", 0);
+                        editorGame.commit();
 
                     }
                 }
             }
+            i++;
 
         }
+        //spec atack
+        int specialAttack;
+        i=1;
+
+        while(i<7){
+            sharedPreferencesGame=getSharedPreferences("com.example.targon.tvsc." + login + "." + i, Context.MODE_PRIVATE);
+            editorGame=sharedPreferencesGame.edit();
+            looser=sharedPreferencesGame.getBoolean("looser", true);
+            agentcount=sharedPreferencesGame.getInt("agentCount", 0);
+            solcount1=sharedPreferences1.getInt("soldierCount", 0);
+            solcount2=sharedPreferences2.getInt("soldierCount", 0);
+            solcount3=sharedPreferences3.getInt("soldierCount", 0);
+            solcount4=sharedPreferences4.getInt("soldierCount", 0);
+            solcount5=sharedPreferences5.getInt("soldierCount", 0);
+            solcount6=sharedPreferences6.getInt("soldierCount", 0);
+            if(looser==false){
+                if(agentcount>0){
+                    if(idNation==i){
+
+                        specialAttack=sharedPreferences.getInt("specAttack", 0);
+
+                        r=rand.nextInt(35000)+500;
+                        switch (specialAttack){
+                            case 1:
+                                if(solcount1<2000){
+                                    solcount1=0;
+                                }else {
+                                    solcount1-=r;
+                                }
+                                editor1.putInt("soldierCount", solcount1);
+                                editor1.commit();
+                                editorGame.putInt("agentCount", 0);
+                                editorGame.commit();
+                                agentcount=0;
+                                infospec="you make special atack in usa";
+                                break;
+                            case 2:
+                                if(solcount2<2000){
+                                    solcount2=0;
+                                }else {
+                                    solcount2-=r;
+                                }
+                                editor2.putInt("soldierCount", solcount2);
+                                editor2.commit();
+                                editorGame.putInt("agentCount", 0);
+                                editorGame.commit();
+                                agentcount=0;
+                                infospec="you make special atack in ue";
+                                break;
+                            case 3:
+                                if(solcount3<2000){
+                                    solcount3=0;
+                                }else {
+                                    solcount3-=r;
+                                }
+                                editor3.putInt("soldierCount", solcount3);
+                                editor3.commit();
+                                editorGame.putInt("agentCount", 0);
+                                editorGame.commit();
+                                agentcount=0;
+                                infospec="you make special atack in russia";
+                                break;
+                            case 4:
+                                if(solcount4<2000){
+                                    solcount4=0;
+                                }else {
+                                    solcount4=solcount4-r;
+                                }
+                                editor4.putInt("soldierCount", solcount4);
+                                editor4.commit();
+                                editorGame.putInt("agentCount", 0);
+                                editorGame.commit();
+                                infospec="you make special atack in isis";
+                                agentcount=0;
+                                break;
+                            case 5:
+                                if(solcount5<2000){
+                                    solcount5=0;
+                                }else {
+                                    solcount5-=r;
+                                }
+                                editor5.putInt("soldierCount", solcount5);
+                                editor5.commit();
+                                editorGame.putInt("agentCount", 0);
+                                editorGame.commit();
+                                infospec="you make special atack in boko haram";
+                                agentcount=0;
+                                break;
+                            case 6:
+                                if(solcount6<2000){
+                                    solcount6=0;
+                                }else {
+                                    solcount6-=r;
+                                }
+                                editor6.putInt("soldierCount", solcount6);
+                                editor6.commit();
+                                editorGame.putInt("agentCount", 0);
+                                infospec="you make special atack in al shabad";
+                                editorGame.commit();
+                                agentcount=0;
+                                break;
+                        }
+                    }else{
+                        r=rand.nextInt(35000)+500;
+                            if(i>3){
+                                if(solcount1>solcount2&&solcount1>solcount3){
+                                    if(solcount1<2000){
+                                        solcount1=0;
+                                    }else {
+                                        solcount1-=r;
+                                    }
+                                    editor1.putInt("soldierCount", solcount1);
+                                    editor1.commit();
+                                    editorGame.putInt("agentCount", 0);
+                                    editorGame.commit();
+                                }else if(solcount2>solcount3){
+                                    if(solcount2<2000){
+                                        solcount2=0;
+                                    }else {
+                                        solcount2-=r;
+                                    }
+                                    editor2.putInt("soldierCount", solcount2);
+                                    editor2.commit();
+                                    editorGame.putInt("agentCount", 0);
+                                    editorGame.commit();
+                                }else{
+                                    if(solcount3<2000){
+                                        solcount3=0;
+                                    }else {
+                                        solcount3-=r;
+                                    }
+                                    editor3.putInt("soldierCount", solcount3);
+                                    editor3.commit();
+                                    editorGame.putInt("agentCount", 0);
+                                    editorGame.commit();
+                                }
+                            }else{
+                                if(solcount4>solcount5&&solcount4>solcount6){
+                                    if(solcount4<2000){
+                                        solcount4=0;
+                                    }else {
+                                        solcount4-=r;
+                                    }
+                                    editor4.putInt("soldierCount", solcount4);
+                                    editor4.commit();
+                                    editorGame.putInt("agentCount", 0);
+                                    editorGame.commit();
+                                }else if(solcount5>solcount6){
+                                    if(solcount5<2000){
+                                        solcount5=0;
+                                    }else {
+                                        solcount5-=r;
+                                    }
+                                    editor5.putInt("soldierCount", solcount5);
+                                    editor5.commit();
+                                    editorGame.putInt("agentCount", 0);
+                                    editorGame.commit();
+                                }else{
+                                    if(solcount6<2000){
+                                        solcount6=0;
+                                    }else {
+                                        solcount6-=r;
+                                    }
+                                    editor6.putInt("soldierCount", solcount6);
+                                    editor6.commit();
+                                    editorGame.putInt("agentCount", 0);
+                                    editorGame.commit();
+                                }
+                            }
+
+                    }
+                }
+            }
+            i++;
+        }
+        //spr porazki
+        solcount1=sharedPreferences1.getInt("soldierCount", 0);
+        solcount2=sharedPreferences2.getInt("soldierCount", 0);
+        solcount3=sharedPreferences3.getInt("soldierCount", 0);
+        solcount4=sharedPreferences4.getInt("soldierCount", 0);
+        solcount5=sharedPreferences5.getInt("soldierCount", 0);
+        solcount6=sharedPreferences6.getInt("soldierCount", 0);
+
+        if(solcount1<1){
+            editor1.putBoolean("looser", true);
+            editor1.commit();
+        }
+        if(solcount2<1){
+            editor2.putBoolean("looser", true);
+            editor2.commit();
+        }
+        if(solcount3<1){
+            editor3.putBoolean("looser", true);
+            editor3.commit();
+        }
+        if(solcount4<1){
+            editor4.putBoolean("looser", true);
+            editor4.commit();
+        }
+        if(solcount5<1){
+            editor5.putBoolean("looser", true);
+            editor5.commit();
+        }
+        if(solcount6<1){
+            editor6.putBoolean("looser", true);
+            editor6.commit();
+        }
+        //spec point add
+        specPoint=sharedPreferences1.getInt("specPoint", 0);
+        editor1.putInt("specPoint", specPoint+10);
+        editor1.commit();
+        specPoint=sharedPreferences2.getInt("specPoint", 0);
+        editor2.putInt("specPoint", specPoint+10);
+        editor2.commit();
+        specPoint=sharedPreferences3.getInt("specPoint", 0);
+        editor3.putInt("specPoint", specPoint+20);
+        editor3.commit();
+        specPoint=sharedPreferences4.getInt("specPoint", 0);
+        editor4.putInt("specPoint", specPoint+10);
+        editor4.commit();
+        specPoint=sharedPreferences5.getInt("specPoint", 0);
+        editor5.putInt("specPoint", specPoint+20);
+        editor5.commit();
+        specPoint=sharedPreferences6.getInt("specPoint", 0);
+        editor6.putInt("specPoint", specPoint+10);
+        editor6.commit();
         //pieniądz musi się zgadzać :D
         int m1=sharedPreferences1.getInt("money", 0);
         int m2=sharedPreferences1.getInt("money", 0);
@@ -902,7 +1315,13 @@ public class InfoActivity extends AppCompatActivity {
         }
         //sprawdzanie zwyciestwa
         Intent intent=new Intent(this, EndActivity.class);
+        sharedPreferencesGame=getSharedPreferences("com.example.targon.tvsc." + login + "." + idNation, Context.MODE_PRIVATE);
+        playerlooser=sharedPreferencesGame.getBoolean("looser", true);
         if(playerlooser==true){
+            sharedPreferencesSystem=getSharedPreferences("com.example.targon.tvsc.system.system", Context.MODE_PRIVATE);
+            editorSystem=sharedPreferencesSystem.edit();
+            editorSystem.putString("login", "");
+            editorSystem.commit();
             intent.putExtra("game", "YOU LOOSE");
             startActivity(intent);
         }
@@ -912,22 +1331,73 @@ public class InfoActivity extends AppCompatActivity {
 
         if(l4==true&&l5==true&&l6==true){
             if(idNation<4){
+                sharedPreferencesSystem=getSharedPreferences("com.example.targon.tvsc.system.system", Context.MODE_PRIVATE);
+                editorSystem=sharedPreferencesSystem.edit();
+                editorSystem.putString("login", "");
+                editorSystem.commit();
                 intent.putExtra("game", "YOU WIN");
                 startActivity(intent);
             }else{
+                sharedPreferencesSystem=getSharedPreferences("com.example.targon.tvsc.system.system", Context.MODE_PRIVATE);
+                editorSystem=sharedPreferencesSystem.edit();
+                editorSystem.putString("login", "");
+                editorSystem.commit();
                 intent.putExtra("game", "YOU LOOSE");
                 startActivity(intent);
             }
         }
+
         if(h4>=100||h5>=100||h6>=100){
             if(idNation>3){
+                sharedPreferencesSystem=getSharedPreferences("com.example.targon.tvsc.system.system", Context.MODE_PRIVATE);
+                editorSystem=sharedPreferencesSystem.edit();
+                editorSystem.putString("login", "");
+                editorSystem.commit();
                 intent.putExtra("game", "YOU WIN");
                 startActivity(intent);
             }else{
+                sharedPreferencesSystem=getSharedPreferences("com.example.targon.tvsc.system.system", Context.MODE_PRIVATE);
+                editorSystem=sharedPreferencesSystem.edit();
+                editorSystem.putString("login", "");
+                editorSystem.commit();
                 intent.putExtra("game", "YOU LOOSE");
                 startActivity(intent);
             }
         }
+        editor.putInt("countRound", ++countRound);
+        editor.commit();
+        sharedPreferencesGame=getSharedPreferences("com.example.targon.tvsc." + login + "." + idNation, Context.MODE_PRIVATE);
+        int nowsol=sharedPreferencesGame.getInt("soldierCount", 0);
+        int nowair=sharedPreferencesGame.getInt("airCount", 0);
+        int nownavy=sharedPreferencesGame.getInt("navyCount", 0);
+        infosol-=nowsol;
+        infoair-=nowair;
+        infonavy-=nownavy;
+        txt.setText("You lost "+infosol+" soldiers");
+        if(idNation>3){
+            txta.setText("You lost "+infoair+" missile air");
+            txtn.setText("You lost "+infonavy+" missile navy");
+        }else{
+            txta.setText("You lost "+infoair+" airplanes");
+            txtn.setText("You lost "+infonavy+" ships");
+        }
+        txts.setText(infospec);
+        TextView txtMoney=(TextView)findViewById(R.id.textmoney);
+        TextView txtRound=(TextView)findViewById(R.id.textround);
+        TextView txthappy=(TextView)findViewById(R.id.texthomeland);
+        TextView txtspec=(TextView)findViewById(R.id.textspecial);
+        money=0;
+        int round=sharedPreferences.getInt("countRound", -1);
+        int happy=0;
+        int spec=0;
+        money=sharedPreferencesGame.getInt("money", -1);
+        happy=sharedPreferencesGame.getInt("soldierCount", 0);
+        spec=sharedPreferencesGame.getInt("specPoint", -1);
+        happy=happy/100;
+        txtMoney.setText(""+money);
+        txtRound.setText(""+round);
+        txthappy.setText(""+happy);
+        txtspec.setText(""+spec);
     }
 
     public void exit(View view){

@@ -25,18 +25,18 @@ public class Registration3Activity extends AppCompatActivity {
         ImageView img2=(ImageView)findViewById(R.id.img2);
         ImageView img3=(ImageView)findViewById(R.id.img3);
         if(id==1){
-            txt1.setText("usa bla bla bla");
-            txt2.setText("rosja bla bla bla");
-            txt3.setText("ue bla bla bla");
+            txt1.setText("usa (premium +3 oil well)");
+            txt2.setText("rosja (premium +2500 soldier)");
+            txt3.setText("ue (premium +10 spec point on start and +20 spec point every round)");
             addid=0;
         }
         if(id==2){
             img1.setImageResource(R.drawable.isisflag);
             img2.setImageResource(R.drawable.bohaflag);
             img3.setImageResource(R.drawable.alshflag);
-            txt1.setText("isis bla bla bla");
-            txt2.setText("boco charam bla bla bla");
-            txt3.setText("al shabat bla bla bla");
+            txt1.setText("isis (premium +3 oil well)");
+            txt2.setText("boco (premium +10 spec point on start and +20 spec point every round)");
+            txt3.setText("al shabat (premium +2500 soldier");
             addid=3;
         }
 

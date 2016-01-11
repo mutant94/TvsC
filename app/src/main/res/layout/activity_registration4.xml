@@ -53,7 +53,7 @@
                         android:id="@+id/txt1"
                         android:textSize="15sp"
                         android:textColor="#cccccc"
-                        android:text="wygrasz spokojnie"/>
+                        android:text="tero make only soldiers and countries make only air"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -84,7 +84,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="15sp"
                         android:textColor="#cccccc"
-                        android:text="postaraj się"/>
+                        android:text="tero and countries make all but can't make special attack"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -115,7 +115,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="15sp"
                         android:textColor="#cccccc"
-                        android:text="masz przewalone"/>
+                        android:text="computer game can make all"/>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

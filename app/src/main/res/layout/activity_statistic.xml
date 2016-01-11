@@ -216,17 +216,19 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="20sp"
-                        android:textColor="#CCCCCC"
+                        android:textColor="#CCCC00"
                         android:text="Name"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"/>
+                        android:textSize="20sp"
+                        android:textColor="#CCCC00"
+                        android:text="- "/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="20sp"
-                        android:textColor="#CCCCCC"
+                        android:textColor="#CCCC00"
                         android:text="Point"/>
                     <TextView
                         android:layout_width="wrap_content"
@@ -255,7 +257,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"/>
+                        android:textSize="20sp"
+                        android:textColor="#CCCCCC"
+                        android:text="- "/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -290,7 +294,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"/>
+                        android:textSize="20sp"
+                        android:textColor="#CCCCCC"
+                        android:text="- "/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -325,7 +331,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"/>
+                        android:textSize="20sp"
+                        android:textColor="#CCCCCC"
+                        android:text="- "/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -360,7 +368,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"/>
+                        android:textSize="20sp"
+                        android:textColor="#CCCCCC"
+                        android:text="- "/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -395,7 +405,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"/>
+                        android:textSize="20sp"
+                        android:textColor="#CCCCCC"
+                        android:text="- "/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -430,7 +442,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"/>
+                        android:textSize="20sp"
+                        android:textColor="#CCCCCC"
+                        android:text="- "/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

@@ -16,5 +16,24 @@ public class EndActivity extends AppCompatActivity {
         String txt= i.getStringExtra("game");
         TextView txtend=(TextView)findViewById(R.id.txtend);
         txtend.setText(txt);
+
+        Thread thread=new Thread(){
+            public void run(){
+                try {
+                    sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                finally {
+                    goNext();
+                }
+            }
+        };
+        thread.start();
+    }
+
+    private void goNext() {
+        Intent intent=new Intent(this, LoginActivity.class);
+        startActivity(intent);
     }
 }

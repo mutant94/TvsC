@@ -69,7 +69,8 @@
             android:name=".Registration4Activity"
             android:configChanges="keyboardHidden|orientation|screenSize" >
         </activity>
-        <activity android:name=".EndActivity" >
+        <activity android:name=".EndActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
     </application>
 

@@ -36,4 +36,9 @@ public class EndActivity extends AppCompatActivity {
         Intent intent=new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
+    @Override
+    protected void onPause(){
+        super.onPause();
+        finish();
+    }
 }

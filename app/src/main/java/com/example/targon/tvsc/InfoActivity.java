@@ -1204,26 +1204,80 @@ public class InfoActivity extends AppCompatActivity {
         solcount6=sharedPreferences6.getInt("soldierCount", 0);
 
         if(solcount1<1){
+            editor1.putInt("money", 0);
+            editor1.putInt("specPoint", 0);
+            editor1.putInt("soldierCount", 0);
+            editor1.putInt("airCount", 0);
+            editor1.putInt("navyCount", 0);
+            editor1.putInt("dronCount", 0);
+            editor1.putInt("surCount", 0);
+            editor1.putInt("otherCount", 0);
+            editor1.putInt("agentCount", 0);
             editor1.putBoolean("looser", true);
             editor1.commit();
         }
         if(solcount2<1){
+            editor2.putInt("money", 0);
+            editor2.putInt("specPoint", 0);
+            editor2.putInt("soldierCount", 0);
+            editor2.putInt("airCount", 0);
+            editor2.putInt("navyCount", 0);
+            editor2.putInt("dronCount", 0);
+            editor2.putInt("surCount", 0);
+            editor2.putInt("otherCount", 0);
+            editor2.putInt("agentCount", 0);
             editor2.putBoolean("looser", true);
             editor2.commit();
         }
         if(solcount3<1){
+            editor3.putInt("money", 0);
+            editor3.putInt("specPoint", 0);
+            editor3.putInt("soldierCount", 0);
+            editor3.putInt("airCount", 0);
+            editor3.putInt("navyCount", 0);
+            editor3.putInt("dronCount", 0);
+            editor3.putInt("surCount", 0);
+            editor3.putInt("otherCount", 0);
+            editor3.putInt("agentCount", 0);
             editor3.putBoolean("looser", true);
             editor3.commit();
         }
         if(solcount4<1){
+            editor4.putInt("money", 0);
+            editor4.putInt("specPoint", 0);
+            editor4.putInt("soldierCount", 0);
+            editor4.putInt("airCount", 0);
+            editor4.putInt("navyCount", 0);
+            editor4.putInt("dronCount", 0);
+            editor4.putInt("surCount", 0);
+            editor4.putInt("otherCount", 0);
+            editor4.putInt("agentCount", 0);
             editor4.putBoolean("looser", true);
             editor4.commit();
         }
         if(solcount5<1){
+            editor5.putInt("money", 0);
+            editor5.putInt("specPoint", 0);
+            editor5.putInt("soldierCount", 0);
+            editor5.putInt("airCount", 0);
+            editor5.putInt("navyCount", 0);
+            editor5.putInt("dronCount", 0);
+            editor5.putInt("surCount", 0);
+            editor5.putInt("otherCount", 0);
+            editor5.putInt("agentCount", 0);
             editor5.putBoolean("looser", true);
             editor5.commit();
         }
         if(solcount6<1){
+            editor6.putInt("money", 0);
+            editor6.putInt("specPoint", 0);
+            editor6.putInt("soldierCount", 0);
+            editor6.putInt("airCount", 0);
+            editor6.putInt("navyCount", 0);
+            editor6.putInt("dronCount", 0);
+            editor6.putInt("surCount", 0);
+            editor6.putInt("otherCount", 0);
+            editor6.putInt("agentCount", 0);
             editor6.putBoolean("looser", true);
             editor6.commit();
         }
@@ -1248,11 +1302,11 @@ public class InfoActivity extends AppCompatActivity {
         editor6.commit();
         //pieniądz musi się zgadzać :D
         int m1=sharedPreferences1.getInt("money", 0);
-        int m2=sharedPreferences1.getInt("money", 0);
-        int m3=sharedPreferences1.getInt("money", 0);
-        int m4=sharedPreferences1.getInt("money", 0);
-        int m5=sharedPreferences1.getInt("money", 0);
-        int m6=sharedPreferences1.getInt("money", 0);
+        int m2=sharedPreferences2.getInt("money", 0);
+        int m3=sharedPreferences3.getInt("money", 0);
+        int m4=sharedPreferences4.getInt("money", 0);
+        int m5=sharedPreferences5.getInt("money", 0);
+        int m6=sharedPreferences6.getInt("money", 0);
         int sol1=sharedPreferences1.getInt("soldierCount", 0);
         int sol2=sharedPreferences2.getInt("soldierCount", 0);
         int sol3=sharedPreferences3.getInt("soldierCount", 0);

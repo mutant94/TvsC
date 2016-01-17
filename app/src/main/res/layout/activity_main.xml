@@ -20,7 +20,7 @@
     android:layout_height="wrap_content"
     android:textSize="20sp"
     android:textColor="#AA0000"
-    android:text="Create:Mieho i Targon"
+    android:text="Created by:Mieho i Targon"
     android:layout_alignParentBottom="true"
     android:layout_alignParentEnd="true" />
 </RelativeLayout>

@@ -51,11 +51,11 @@ public class RegistrationActivity extends AppCompatActivity {
                 startActivity(intent);
 
             } else {
-                alertpass.setText("not equals rep. password");
+                alertpass.setText("Passwords are not equal!");
             }
 
         }else {
-            alertlog.setText("this login is using");
+            alertlog.setText("This login is already in use!");
         }
     }
 }

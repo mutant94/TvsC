@@ -90,10 +90,10 @@ public class SoldiersActivity extends AppCompatActivity {
             imgair.setImageResource(R.drawable.miat);
             imgnavy.setImageResource(R.drawable.mint);
             imgdron.setImageResource(R.drawable.radt);
-            txtsol.setText("soldier- "+solcount);
-            txtair.setText("airmissile- "+aircount);
-            txtnavy.setText("navymissile- "+navycount);
-            txtdron.setText("radar- "+droncount);
+            txtsol.setText("soldiers- "+solcount);
+            txtair.setText("airmissiles- "+aircount);
+            txtnavy.setText("navymissiles- "+navycount);
+            txtdron.setText("radars- "+droncount);
             if(money>=1){
                 butsol.setText(txtbuyst);
                 if(money>=10){
@@ -106,10 +106,10 @@ public class SoldiersActivity extends AppCompatActivity {
                 }
             }
         }else{
-            txtsol.setText("soldier- "+solcount);
-            txtair.setText("aircraft- "+aircount);
-            txtnavy.setText("ship- "+navycount);
-            txtdron.setText("drone- "+droncount);
+            txtsol.setText("soldiers- "+solcount);
+            txtair.setText("aircrafts- "+aircount);
+            txtnavy.setText("ships- "+navycount);
+            txtdron.setText("drones- "+droncount);
             if(money>=5){
                 butdron.setText(txtbuydc);
                 if(money>=10){

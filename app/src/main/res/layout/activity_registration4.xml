@@ -53,7 +53,7 @@
                         android:id="@+id/txt1"
                         android:textSize="15sp"
                         android:textColor="#cccccc"
-                        android:text="tero make only soldiers and countries make only air"/>
+                        android:text="Terrorists train soldiers only. Countries produce aircraft only."/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -84,7 +84,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="15sp"
                         android:textColor="#cccccc"
-                        android:text="tero and countries make all but can't make special attack"/>
+                        android:text="Terrorists and countries can manufacture everything but can&apos;t perform any special attack."/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -115,7 +115,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="15sp"
                         android:textColor="#cccccc"
-                        android:text="computer game can make all"/>
+                        android:text="Computer player is allowed to do every action."/>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

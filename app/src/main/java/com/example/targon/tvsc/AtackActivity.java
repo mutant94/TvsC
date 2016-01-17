@@ -19,12 +19,12 @@ public class AtackActivity extends AppCompatActivity {
     String login;
     int idNation;
     String function="nothing";
-    String functiona4="attack isis";
-    String functiona5="attack boko haram";
-    String functiona6="attack al shabad";
-    String funac="actual ";
+    String functiona4="attack ISIS";
+    String functiona5="attack Boko Haram";
+    String functiona6="attack Al Shabad";
+    String funac="currently ";
     String fundef="defended";
-    String funcam="camufalge";
+    String funcam="camouflage";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

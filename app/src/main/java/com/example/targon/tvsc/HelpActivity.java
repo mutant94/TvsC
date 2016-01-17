@@ -115,25 +115,25 @@ public class HelpActivity extends AppCompatActivity {
 
     public void helpwin(View view) {
         TextView textView=(TextView)findViewById(R.id.txtResolve);
-        textView.setText("Countries win if all terorist group have 0 point in stats(territory gains). When one terrorist group have 100 territory, terrorist win. If country have 0 happy, this country loose. When Player have 0 point, game is over and user loose");
+        textView.setText("Countries win if every terrorist group has no stat points(territory gains). Whether one of terrorist group has 100 territory, it wins. If country happiness is none, this country loses. When Player has no points, game is over and user loses");
     }
 
     public void helpunit(View view) {
         TextView textView=(TextView)findViewById(R.id.txtResolve);
-        textView.setText("Soldier's generated territory gains(terrorist) or happy(countries). Every round you lose some soldiers. Drone's and radar increase dmg. Planes and ships destroy all typ terrorist units. In terrorist missile's anty navy attack ship's and missile's anty aircraft attack only enemy plan's");
+        textView.setText("Soldiers generate territory gains(terrorist) or happiness(countries). Every round you lose several soldiers. Drones and radar increase damage. Planes and ships can attack all type of terrorist units. Terrorist's anti-navy missiles attack ships and anti-air ones attack enemy's aircraft.");
     }
 
     public void helpspec(View view) {
         TextView textView=(TextView)findViewById(R.id.txtResolve);
-        textView.setText("Every round +10 special point(Europe and Boko Haram +20)" +"\n"+
-                "Special agent destroy 10%-70% soldier in enemy, when you send. If enemy have 1000 soldier or lower and you send to this enemy, his loose. ");
+        textView.setText("Every round you get +10 special point(Europe and Boko Haram get +20)" +"\n"+
+                "Sent special agent destroys 10%-70% enemy soldier's. Alternatively if enemy has 1000 or less soldiers he loses the game due to special agent. ");
     }
 
     public void helpmoney(View view) {
         TextView textView=(TextView)findViewById(R.id.txtResolve);
-        textView.setText("Tax-30*happy(countries) or 20*territory(terrorist)" + "\n"+
-                "One oil well -60(countries) or 30(terrorist)" +"\n"+
-                "Factory(countries) - 30" +"\n"+
-                "Terro group(terrorist) - 20");
+        textView.setText("Every conflict side gets income from happiness or territory calculated as following: 30*happiness(countries) or 20*territory(terrorists)" + "\n"+
+                "Each oil well income: 60(countries) or 30(terrorists)" +"\n"+
+                "Factories in countries give you 30 money units" +"\n"+
+                "Terrorist group gives you 20 m. units");
     }
 }

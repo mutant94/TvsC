@@ -153,7 +153,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/viewhappy"
-                    android:text="Happy: "/>
+                    android:text="Hap.: "/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -165,7 +165,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Spec. Point: "/>
+                    android:text="Spec. P.: "/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

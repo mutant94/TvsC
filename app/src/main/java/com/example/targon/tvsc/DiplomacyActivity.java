@@ -19,12 +19,12 @@ public class DiplomacyActivity extends AppCompatActivity {
     SharedPreferences.Editor editorPlayer;
     String login;
     int idNation;
-    String at1="Usa";
+    String at1="USA";
     String at2="Russia";
     String at3="EU";
-    String ac1="Isis";
-    String ac2="boko haram";
-    String ac3="al shabad";
+    String ac1="ISIS";
+    String ac2="Boko Haram";
+    String ac3="Al Shabad";
     String no="nothing";
 
     String buy="cost 100 spec";
@@ -68,7 +68,7 @@ public class DiplomacyActivity extends AppCompatActivity {
         Button buysp=(Button)findViewById(R.id.buySpec);
         TextView txtspe=(TextView)findViewById(R.id.txtspec);
         TextView txtfun=(TextView)findViewById(R.id.functionspec);
-        txtspe.setText("actual-"+agentCount);
+        txtspe.setText("currently-"+agentCount);
         if(spec>=100){
             buysp.setText(buy);
         }else {

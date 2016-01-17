@@ -153,7 +153,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/viewhappy"
-                    android:text="Happy: "/>
+                    android:text="Hap.: "/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -165,7 +165,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Spec. Point: "/>
+                    android:text="Spec. P.: "/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -244,7 +244,7 @@
                         android:background="#AA0000"
                         android:textColor="#FFFFFF"
                         android:layout_weight="1"
-                        android:text="how win"
+                        android:text="how to win"
                         android:onClick="helpwin"/>
                     <TextView
                         android:layout_width="wrap_content"

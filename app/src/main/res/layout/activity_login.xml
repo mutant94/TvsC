@@ -107,7 +107,7 @@
                     android:background="#AA0000"
                     android:textColor="#FFFFFF"
                     android:onClick="goReg"
-                    android:text="SING IN"/>
+                    android:text="SIGN UP"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

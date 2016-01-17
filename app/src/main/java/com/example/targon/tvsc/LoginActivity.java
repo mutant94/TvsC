@@ -38,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(intent);
         }else{
             TextView textViewAlert=(TextView)findViewById(R.id.alert);
-            textViewAlert.setText("Bad password or login");
+            textViewAlert.setText("Wrong password or login");
         }
     }
 

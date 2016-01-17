@@ -5,9 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 
 import java.io.IOException;
 
-/**
- * Created by Targon on 07.01.2016.
- */
 public class MusicPlayer {
     static private MusicPlayer player;
     private static MediaPlayer mediaPlayer;
